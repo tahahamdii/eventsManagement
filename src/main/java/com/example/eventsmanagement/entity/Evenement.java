@@ -16,18 +16,18 @@ import java.util.List;
 public class Evenement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ide")
+    @Column(name = "idE")
     private Long idE;
     @Column(name = "libelle")
     private String libelle;
-    @Column(name = "desc")
+    @Column(name = "description")
     private String description;
-    @Column(name = "dateEvene")
+    @Column(name = "dateEvent")
     private LocalDate dateEvent;
     @Column(name = "nbParticipants")
     private Long nbParticipants ;
     @ManyToOne
-    Utilisateur responsable ;
+    private Utilisateur responsable ;
     @ManyToMany
     private List<Utilisateur> particiapants;
     @OneToMany(mappedBy = "evenement")

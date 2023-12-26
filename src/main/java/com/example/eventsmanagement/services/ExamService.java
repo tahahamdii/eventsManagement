@@ -17,8 +17,11 @@ public class ExamService implements ExamServiceImpl{
     private UtilisateurRepo utilisateurRepo;
     @Autowired
     private ActiviteRepo activiteRepo;
+
+
     @Override
     public Evenement addEvenement(Evenement e) {
+
         return evenementRepo.save(e);
     }
 
