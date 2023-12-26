@@ -11,19 +11,26 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ExamService implements ExamServiceImpl{
+
     @Autowired
     private EvenementRepo evenementRepo;
     @Autowired
     private UtilisateurRepo utilisateurRepo;
     @Autowired
     private ActiviteRepo activiteRepo;
+
+
     @Override
     public Evenement addEvenement(Evenement e) {
+
         return evenementRepo.save(e);
     }
 
     @Override
     public Activite addActivite(Activite a) {
         return activiteRepo.save(a);
+    }
+    public Utilisateur saveUtilisateur(Utilisateur utilisateur){
+        return utilisateurRepo.save(utilisateur);
     }
 }

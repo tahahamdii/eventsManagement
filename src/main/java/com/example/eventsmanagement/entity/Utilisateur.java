@@ -23,10 +23,10 @@ public class Utilisateur {
     private String prenom;
     @Column(name = "numtel")
     private Long numTelephone;
-    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     private Role role ;
-    @OneToMany(mappedBy = "responable")
+    @OneToMany(mappedBy = "responsable")
     List<Evenement> evenementsEnCharge;
-    @ManyToMany(mappedBy = "participant")
+    @ManyToMany(mappedBy = "particiapants")
     List<Evenement> evenementsParticipants;
 }
