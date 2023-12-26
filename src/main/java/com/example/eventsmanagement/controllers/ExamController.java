@@ -2,10 +2,15 @@ package com.example.eventsmanagement.controllers;
 
 import com.example.eventsmanagement.entity.Evenement;
 import com.example.eventsmanagement.entity.Utilisateur;
+<<<<<<< HEAD
 import com.example.eventsmanagement.services.ExamService;
 import com.example.eventsmanagement.services.ExamServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+import com.example.eventsmanagement.services.ExamServiceImpl;
+import lombok.AllArgsConstructor;
+>>>>>>> origin/master
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,9 +18,13 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/events")
 public class ExamController {
+<<<<<<< HEAD
     private ExamServiceImpl examServiceImpl;
     @Autowired
     private ExamService examService;
+=======
+    private ExamServiceImpl examService;
+>>>>>>> origin/master
 
     @PostMapping("/addEvent")
     Evenement addEvenement(@RequestBody Evenement e){
