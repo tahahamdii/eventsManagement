@@ -18,7 +18,7 @@ public class Activite {
     @Column(name = "idA")
     private Long idA;
     @Column(name = "libelle")
-    private String libellle ;
+    private String libelle ;
     @Column(name = "description")
     private String description;
     @ManyToOne

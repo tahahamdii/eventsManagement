@@ -7,5 +7,6 @@ import com.example.eventsmanagement.entity.Utilisateur;
 public interface ExamServiceImpl {
  public Evenement addEvenement(Evenement e);
  public Activite addActivite(Activite a);
+ public void affectActiviteToEvent(Long activiteId,Long eventId);
 
 }

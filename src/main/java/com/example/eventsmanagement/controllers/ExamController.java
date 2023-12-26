@@ -1,5 +1,6 @@
 package com.example.eventsmanagement.controllers;
 
+import com.example.eventsmanagement.entity.Activite;
 import com.example.eventsmanagement.entity.Evenement;
 import com.example.eventsmanagement.entity.Utilisateur;
 
@@ -8,6 +9,8 @@ import com.example.eventsmanagement.services.ExamServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.repository.query.Param;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,5 +34,16 @@ public class ExamController {
         // Now save the Evenement
         return examService.addEvenement(e);
     }
+    @PostMapping("/addActivite")
+    Activite addActivite(@RequestBody Activite a){
+        return examService.addActivite(a);
+
+    }
+    @PostMapping("/affectActivitesToEvent/{idA}")
+    public ResponseEntity<String> affectActivitesToEvent(@RequestParam Long idA, @RequestParam Long idE){
+        examService.affectActiviteToEvent(idA,idE);
+        return ResponseEntity.ok("activites affectes");
+    }
+
 
 }
