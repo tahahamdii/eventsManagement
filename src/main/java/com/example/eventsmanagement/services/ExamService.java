@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ExamService implements ExamServiceImpl{
@@ -59,6 +60,11 @@ public class ExamService implements ExamServiceImpl{
             return "deja fama chkun";
         }
 
+    }
+
+    @Override
+    public List<Evenement> getEventsByResponsable(Long responsableId) {
+        return evenementRepo.findByResponsableId(responsableId);
     }
 
 
