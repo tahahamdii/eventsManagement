@@ -47,6 +47,20 @@ public class ExamService implements ExamServiceImpl{
         evenementRepo.save(evenement);
     }
 
+    @Override
+    public String addUser(Utilisateur u, Long idE) {
+        Evenement evenement = evenementRepo.findById(idE).orElseThrow(() -> new EntityNotFoundException("Evenement not found"));
+        if(evenement.getResponsable()==null){
+            evenement.setResponsable(u);
+            evenementRepo.save(evenement);
+            return "affectation est effectuée";
+        }
+        else {
+            return "deja fama chkun";
+        }
+
+    }
+
 
     public Utilisateur saveUtilisateur(Utilisateur utilisateur){
         return utilisateurRepo.save(utilisateur);
